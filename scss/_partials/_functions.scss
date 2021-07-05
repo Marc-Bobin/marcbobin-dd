@@ -1,0 +1,4 @@
+// Functions
+@function get-theme($t,$k) {
+    @return map-get($t,$k);
+}

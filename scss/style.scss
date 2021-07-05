@@ -1,0 +1,96 @@
+// Partials
+@import "_partials/_functions.scss";
+@import "_partials/_variables.scss";
+@import "_partials/_normalize.scss";
+@import "_partials/_housekeeping.scss";
+@import "_partials/_utilities.scss";
+
+
+// Media queries
+@media screen and (min-width: 360px) {
+    .my-tagline {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 411px) {
+    .my-tagline {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .my-tagline {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .year {
+        text-align: right;
+    }
+    .my-tagline {
+        font-size: 34px;
+    }
+}
+
+@media screen and (min-width: 767px){
+    .portrait {
+        float: right;
+        margin: 1.5rem;
+    }
+    .my-tagline {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width: 899px) {
+    .my-tagline {
+        font-size: 40px;
+    }
+    
+    .contact-info {
+        display: none;
+    }
+
+    .pipe {
+        display: inline;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .navigation {
+        display: inline;
+        float: right;
+    }
+
+    .logo {
+        float: left;
+    }
+
+    nav {
+        padding-bottom: $base-size*3;
+    }
+
+    nav li {
+        display: inline;
+    }
+
+    nav li::after {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .accessibility {
+        font-size: 21px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .accessibility {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,190 @@
+// HOUSEKEEPING
+:root {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: $body-bg;
+    color: $body-color;
+    font-size: $body-font-size;
+    font-family: $body-font-family;
+    font-weight: 400;
+    line-height: $body-line-height;
+    text-align: left;
+}
+
+@for $i from 1 through 6 {
+    $heading-font-size: 1 + ((6 - $i) * 0.2);
+    h#{$i} {
+        font-size: ($heading-font-size * 1rem);
+        margin: (($heading-font-size * 1rem) / 2) 0 ($heading-font-size * 1rem);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $heading-color;
+    font-family: $heading-font-family;
+    font-weight: 500;
+}
+
+h1 {
+    line-height: $h1-line-height;
+}
+
+h2 {
+    line-height: $h2-line-height;
+}
+
+h3 {
+    line-height: $h3-line-height;
+}
+
+h4 {
+    line-height: $h4-line-height;
+}
+
+h5 {
+    line-height: $h5-line-height;
+}
+
+h6 {
+    line-height: $h6-line-height;
+}
+
+p, ul, ol {
+    margin-top: $paragraph-margin-top;
+    margin-bottom: $paragraph-margin-bottom;
+    padding-left: $paragraph-padding-left;
+}
+
+// Lists
+dl {
+    margin: 0 0 #{$paragraph-margin-bottom};
+    padding-left: $paragraph-padding-left;
+}
+
+ul ul,
+ul ol,
+ul dl,
+ol ol,
+ol ul,
+ol dl,
+dl dl,
+dl ul,
+dl ol {
+    margin-bottom: 0;
+}
+
+ol,
+ul {
+    list-style-position: inside;
+}
+
+dt {
+    font-weight: 700;
+    padding-left: $paragraph-padding-left;
+}
+
+dd {
+    margin: 0 #{$paragraph-margin-right} #{$paragraph-margin-bottom} 0;
+    padding-left: $paragraph-padding-left;
+}
+
+img {
+    max-width: 100%;
+}
+
+blockquote {
+    padding-left: $paragraph-padding-left;
+}
+
+// anchor
+a, a:link {
+    color: $anchor-link;
+}
+
+a:visited {
+    color: $anchor-visited;
+}
+
+a:focus {
+    text-decoration: underline;
+    color: $anchor-focus;
+}
+
+a:hover {
+    color: $anchor-hover;
+}
+
+a:active {
+    color: $anchor-active;
+    position: relative;
+    text-decoration: underline;
+}
+.active-nav {
+    color: $anchor-active;
+    position: relative;
+    text-decoration: underline;
+}
+
+
+// Header
+header {
+    background-color: $header-bg;
+    margin-top: 60px;
+}
+
+// Navigation
+nav {
+    background-color: $nav-bg;
+    padding: $nav-link-padding*2;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: $nav-link-margin-top;
+    margin-bottom: $nav-link-margin-bottom;
+    text-decoration: none;
+}
+
+nav li {
+    padding: #{$nav-link-padding*2} 0;
+}
+
+nav li::after {
+    content:'';
+    position: absolute;
+    width: 80%;
+    height: $base-size/12;
+    margin-top: $nav-link-margin-top/2;
+    background-color: $anchor-link;
+    display: block;
+}
+
+nav a {
+    padding: 0 #{$nav-link-padding-right} 0 0;
+    text-decoration: none;
+}
+
+// Footer
+.pre-footer {
+    background-color: $pre-footer-bg;
+    color: $pre-footer-color;
+}
+
+footer {
+    background-color: $footer-bg;
+    color: $footer-color;
+}

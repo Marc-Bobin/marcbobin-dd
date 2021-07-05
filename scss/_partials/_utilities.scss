@@ -1,0 +1,344 @@
+// CLASS BASED STYLES
+
+// Colors
+.bg-section {
+    background-color: $theme-primary;
+    color: $theme-white;
+}
+
+.accent-color {
+    color: $theme-secondary;
+}
+
+.body-link {
+    color: $theme-primary;
+    font-weight: bold;
+}
+
+.body-link-white {
+    color: $theme-white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.body-link-no-underline {
+    text-decoration: none;
+}
+
+
+
+// Border
+.border-inside {
+    border: 4px double $theme-white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px $theme-primary;
+}
+
+.border-dark {
+    border: 2px double $theme-primary;
+    border-radius: 5px;
+    box-shadow: 0 0 5px $theme-white;
+}
+
+.shadow-white {
+    box-shadow: 0 0 6px $theme-white;
+}
+
+
+
+// SIZES
+.heading-padding {
+    padding-left: $heading-padding-left;
+}
+
+.window-height {
+    height: 60vh;
+}
+
+.view-height {
+    min-height: 51vh;
+}
+
+
+
+.portrait {
+    float: none;
+}
+
+.pipe {
+    display: none;
+}
+
+nav li::after#language {
+    display: none;
+    background-color: none;
+}
+
+hr {
+    margin-left: $base-size;
+    margin-bottom: ($base-size*3);
+    color: $theme-hr;
+}
+
+
+/* BURGER ICON */
+.burger {
+    width: $base-size*2.25;
+    height: $base-size*1.5;
+    cursor: pointer;
+    position: relative;
+    margin-right: $base-size;
+    margin-top: $base-size/2;
+    margin-left: auto;
+}
+
+.burger span {
+    width: 100%;
+    height: $base-size/4;
+    background-color: $theme-white;
+    display: block;
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.burger span::before, .burger span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: $base-size/4;
+    background-color: $theme-white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.burger span::before {
+    transform: translateY(-10px);
+}
+
+.burger span::after {
+    transform: translateY(10px);
+}
+
+.burger.active span {
+    background-color: transparent;
+}
+
+.burger.active span::before {
+    transform: translateY(0px) rotateZ(45deg);
+}
+
+.burger.active span::after {
+    transform: translateY(0px) rotateZ(-45deg);
+}
+
+// Navigation
+.navigation {
+    display: none;
+}
+
+.navigation-show {
+    border: none;
+    display: block;
+    background-color: $nav-bg;
+    padding-bottom: 2rem;
+}
+
+#navigation {
+    transition: top 0.3s ease-in;
+    transition-delay: 0.2s;
+}
+
+
+// TIMELINE
+/* The year in the Timeline to be able to align to left on small screens */
+.year {
+    text-align: left;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: $theme-secondary;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -1;
+}
+
+/* Container around content */
+.timeline-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -12px;
+    background-color: $theme-primary;
+    border: 4px solid $theme-secondary;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Place the container to the left */
+.left {
+    left: 0;
+}
+
+/* Place the container to the right */
+.right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: 1px solid $theme-primary;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent $theme-primary;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: 1px solid $theme-primary;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent $theme-primary transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -12px;
+}
+
+/* The actual content */
+.content {
+    padding: 20px 30px;
+    background-color: $theme-primary;
+    position: relative;
+    border: 4px double $theme-white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px $theme-accent;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .timeline-container::before {
+        left: 60px;
+        border: medium solid $theme-primary;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent $theme-primary transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+        left: 18px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+        left: 0%;
+    }
+}
+
+
+// CAROUSEL - Change the arrow color (da0037) into the svg
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23da0037'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23da0037'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+
+// NAVIGATION SCROLL
+#navigation{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 60px;
+    z-index: 2;
+    
+    transition: top 0.3s;
+    transition-delay: 0.2s;
+}
+
+#navigation.hidden {
+    top: -150px;
+}
+
+// FADE-IN AND SLIDE IN SCROLL
+.fade-in {
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}
+
+.from-left {
+    // grid-column: 3/4;
+    transform: translateX(-100%);
+}
+
+.from-right {
+    // grid-column: 3/4;
+    transform: translateX(100%);
+}
+
+.from-left,
+.from-right {
+    transition: transform 500ms ease-in;
+    
+}
+
+.from-left.appear,
+.from-right.appear {
+    transform: translateX(0);
+}

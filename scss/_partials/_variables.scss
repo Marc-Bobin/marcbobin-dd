@@ -1,0 +1,131 @@
+// VARIABLES
+// Base
+$base-size: 1rem;
+
+// Colors
+$dark-blue: #394054;
+$light-blue: #d8e3f0;
+$turquoise: #5DA5B3;
+$red: #c42a2a;
+
+$dark: #171717;
+$dark-red: #da0037;
+$dark-gray: #444444;
+$light-gray: rgb(237, 237, 237);
+
+$dark-blue: #162447;
+$blue: rgb(31, 64, 104);
+$ruby: #E43F5A;
+$darker-blue: rgb(27, 27, 47);
+
+$lighter: lighten($light-blue, 8%);
+$white: #fff;
+$dark: #1C1C1F;
+
+
+// THEMES
+// Theme-one
+$theme-one: (
+    "primary": $dark-blue,
+    "secondary": $light-blue,
+    "accent": $red,
+    "light": $lighter,
+    "white": $white,
+    "black": $dark,
+);
+// Theme-two
+$theme-two: (
+    "primary": $dark,
+    "secondary": $dark-red,
+    "accent": $dark-gray,
+    "light": $light-gray,
+    "white": $white,
+    "black": $dark,
+    "lighter": $lighter,
+);
+
+// Theme-three
+$theme-three: (
+    "primary": $dark-blue,
+    "secondary": $blue,
+    "accent": $dark-red,
+    "light": $light-gray,
+    "white": $white,
+    "black": $darker-blue,
+    "lighter": $lighter,
+);
+
+// Theme switcher
+$theme: $theme-two;
+
+// Globals
+$theme-primary: get-theme($theme, "primary");
+$theme-secondary: get-theme($theme, "secondary");
+$theme-accent: get-theme($theme, "accent");
+$theme-clear: get-theme($theme, "light");
+$theme-white: get-theme($theme, "white");
+$theme-black: get-theme($theme, "black");
+$theme-lighter: get-them($theme, "lighter");
+
+// Fonts
+$primary-font-stack: 'Gruppo', cursive;
+
+// Body
+$body-font-family: $primary-font-stack;
+$body-bg: $theme-white;
+$body-color: $theme-primary;
+$body-font-size: $base-size;
+$body-line-height: 1.4;
+$body-font-weight: 400;
+
+// Headings
+$heading-font-family: $primary-font-stack;
+$heading-color: $theme-primary;
+$heading-padding-left: $base-size;
+$h1-line-height: 1.1; 
+$h2-line-height: 1.2; 
+$h3-line-height: 1.2; 
+$h4-line-height: 1.3; 
+$h5-line-height: 1.4; 
+$h6-line-height: 1.4; 
+
+// Paragraph
+$paragraph-margin-top: $base-size;
+$paragraph-margin-right: $base-size;
+$paragraph-margin-bottom: $base-size;
+$paragraph-margin-left: $base-size;
+$paragraph-padding-left: $base-size;
+
+// HR
+$theme-hr: $theme-primary;
+
+// Anchors
+$anchor-link: $theme-white;
+$anchor-visited: lighten($theme-white, 25%);
+$anchor-focus: darken($theme-white, 20%);
+$anchor-hover: darken($theme-white, 30%);
+// $anchor-active: darken($theme-white, 60%);
+$anchor-active: $theme-secondary;
+
+// Header
+$header-bg: $theme-secondary;
+
+// Navigation
+$nav-link-margin-top: $base-size;
+$nav-link-margin-bottom: $base-size / 2;
+$nav-link-padding: $base-size / 2;
+$nav-link-padding-right: $base-size;
+$nav-link-padding-left: $base-size / 2;
+$nav-font-size: $base-size * 5;
+$nav-bg: $theme-primary;
+
+// Container
+$container-bg: $theme-white;
+$container-padding-x: $base-size;
+$container-max-width: 960px;
+
+// Footer
+$pre-footer-bg: $theme-secondary;
+$pre-footer-color: $theme-white;
+$footer-bg: $theme-primary;
+$footer-color: $theme-white;
